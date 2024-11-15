@@ -4,8 +4,6 @@ import os
 from backend import progress_bar, generate_text_from_image, generate_story_from_text, generate_speech_from_text
 
 st.set_page_config(page_title="IMAGE TO STORY CONVERTER", page_icon="🖼️")
-audio_file = os.path.join(os.getcwd(), r"C:\Users\ajayss\genaicp3\Image-to-Story\story.mp3")  
-
 
 
 
@@ -29,7 +27,7 @@ if uploaded_file is not None:
     with st.expander("Generated Short Story"):
         st.write(story)
     with st.expander("Generated Audio File"):
-        st.audio(audio_file)
+        st.audio(generated_audio.wav)
 
 
 # Set the title of the app
@@ -52,3 +50,9 @@ if st.sidebar.button("LinkedIn"):
 
 # Add a main body content
 st.write("Upload your image on the main page and see the project in action!")
+
+
+import streamlit as st
+
+x = st.slider('Select a value')
+st.write(x, 'squared is', x * x)
